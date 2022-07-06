@@ -1,0 +1,97 @@
+# THIS IS A SCRIPT FOR INSTALLING ESSENTIAL PYTHON PACKAGES
+# AUTHOR: MAHBOOB ALAM
+#
+#==========
+# COMMANDS:
+#==========
+# make.exe 
+# make.exe install_basic
+# make.exe install_data_science
+# make.exe install_jupyter
+# make.exe test_python
+# make.exe test_jupyter
+# make.exe test_jupyterlab
+
+help:
+	@echo  Usage: 
+	@echo  ________________________________
+	@echo  Example: make.exe install_basic
+	@echo  --------------------------------
+	@echo  __________________
+	@echo  Available Commands:
+	@echo  ==================
+	@echo    help                 : Shows help options
+	@echo    install_basic        : Install basic packages
+	@echo    install_data_science : Install data analysis packages
+	@echo    install_jupyter      : Install jupyter notebook related pacakges
+	@echo    test_python          : Starts the python app
+	@echo    test_jupyter         : Starts the jupyter app on browser
+	@echo    test_jupyterlab      : Starts the jupyterlab app on browser
+
+
+.PHONY:install_core
+
+BASIC_PACKAGES= wheel \
+				requests \
+				mercury \
+				rich \
+				click \
+				sphinx \
+				ipywidgets \
+				pyautogui \
+				autopep8 \
+				beautifulsoup4 \
+				black \
+				npm \
+				tabulate \
+				feather \
+				tables \
+				pyarrow \
+				fastparquet \
+				parquet-tools\
+				nodejs \
+				sqlalchemy-utils\
+				virtualenv\
+				pipenv
+
+DATA_SCIENCE_PACKAGES= 	numpy \
+				pandas \
+				matplotlib \
+				scipy \
+				seaborn \
+				skimpy\
+
+JUPYTER_PACKAGES=notebook\
+				jupyter \
+				jupyterlab \
+				jupyter_contrib_nbextensions \
+				rise
+
+install_basic: 
+	@echo Installing basic packages...
+	@python -m pip install --upgrade pip
+	@pip install $(BASIC_PACKAGES)
+
+install_data_science:
+	@echo Installing data-analysis packages...
+	@python -m pip install --upgrade pip
+	@pip install $(DATA_SCIENCE_PACKAGES)
+
+install_jupyter:
+	@echo Installing jupyter notebook and other packages...
+	@pip install $(JUPYTER_PACKAGES)
+	@jupyter contrib nbextensions uninstall --system
+	@jupyter contrib nbextension install --user
+	@jupyter notebook --generate-config
+
+
+test_python:
+	python.exe --version
+	python.exe
+
+test_jupyter:
+	jupyter notebook
+
+test_jupyterlab:
+	jupyter lab --app_dir='.'
+#	jupyter lab --app_dir=E:/ --preferred_dir E:/Documents/Somewhere/Else
