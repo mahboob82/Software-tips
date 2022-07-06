@@ -1,0 +1,7 @@
+/*export as space delimited file*/
+filename fh 'c:/my/file.txt encoding="utf-8";
+proc export data=dset
+	outfile=fh 
+	dbms=dlm replace;
+	putnames=yes|no;
+run;
