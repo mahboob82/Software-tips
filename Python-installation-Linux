@@ -1,0 +1,35 @@
+Install Higher version of Python for all users on CENTOS
+========================================================
+# Inspired by https://xn--os5ba3q.com/153
+
+# Add this into .bashrc
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+# On Terminal issue the following command for additional dependencies
+yum -y install gcc openssl-devel libffi-devel bzip2-devel
+
+# Download a particular version of python
+wget https://python.org/ftp/python/3.8.2/Python-3.8.2.tgz
+#wget https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
+
+# Goto resource directory (/usr/local), copy the python tar there and unzip it
+cd /usr/local
+cp ~/Python-3.8.2.tgz .
+tar xzf Python-3.8.2.tgz
+
+# Install Python
+cd Python-3.8.2/
+./configure --enable-optimizations
+make altinstall
+
+# Open the .bashrc in your home directory and add the followings aliases
+vi ~/.bashrc
+alias python="/usr/local/bin/python3.8" ## add this line.
+alias pip=pip3.8
+
+# Now reload the .bashrc
+source ~/.bashrc
+
+# Now check for python version
+python -V 
+
