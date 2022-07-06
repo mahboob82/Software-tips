@@ -1,0 +1,154 @@
+NAVIGATION:
+	gg -- Light G floats
+	j -- DOWN    : 10j 999j 1j
+	k -- RIGH    : 14j
+	h -- left    : 10h, 10th letter to the left
+	l -- right   : 99l, 99th letter to the right
+	1% -- TOP
+	100% -- BOTTOM
+	20% -- 20%
+	G -- Heavy G sinks
+	
+	$ - end of line
+	0 - start of line
+
+
+:q -- just navigated nothing changed 
+:q! -- something was changed but you like the old version
+:wq -- something was changed but you like the new version
+:x - saves chaves and q
+shift+ZZ  --saves changes and quits
+
+
+
+r -- replace a character
+x -- delete a character, in typwriter-days, people would press a X over incorrect character
+~ character case change
+
+COPY
+	Y -- always yanks the entire line
+	yy --yank or copy one line
+	3Y -- Copy current line + 2 lines below it
+	12Y
+	
+	:set relativenumber or :set rnu
+	10Y -- current line + 9th next line
+	:set norelativenumber or :set nornu
+	
+
+
+Paste
+p -- pastes after the curser line
+shift+P -- pastes before the cursor line
+
+Cut/Delete
+	D -- deletes from the cursor to the end of the line
+	dd -- delete 1 line (keeps in memory), always the entire line
+	10dd, 3D, 
+	shift + C -- deletes + insert mode
+	
+Append
+shift + A -- Goes to end of line and insert mode
+a -- append after current cursor	
+i -- insert before cursor block
+a -- insert after cursor blcok
+dw -- delete one word (or parts of a word) + space after
+d2w -- delte 2 words
+
+
+Undo
+u
+
+MOVE By Word, forward
+w
+2w
+10w
+shift + W : go to next word (ignores special chars)
+
+b -- 1 word backward (no special character, like '.)
+2b -- 2 char backward 
+B -- 1 word backward (With special character)
+2B -- 2 words backward (with special character)
+
+e -- end of word  (no special character, like '.)
+2e -- end of two words  (no special character, like '.)
+E -- 1 word end ( with special character, like '.)
+2E -- 2 words end ( with special character, like '.)
+ge -- 1 word backward and end of last char
+2ge -- takes me back 2 words over and last char
+
+
+SEARCH
+* - on the word
+n
+
+
+
+
+FIND+REPLACE
+60,70s/require/VIM -- between line 60-70 find 'required' and replace by 'VIM'
+:%s/two/VIM -- change in entire file
+
+60,70s/require/VIM/g<CR> -- global
+:%s/two/VIM/g<CR>
+
+60,70s/require/VIM/gi<CR> -- global + case ignore
+:%s/two/VIM/gi<CR>   
+
+60,70s/require/VIM/gic<CR> -- global + case ignore + ask_confirm
+:%s/two/VIM/gi<CR>   
+
+60,70s/\<require\</VIM/gi<CR> -- Finds word boundary
+:%s/two/VIM/gi<CR>   
+
+
+
+cw -- change word (could be part of word)
+ciw -- change in word (whole word) 
+ci" == change in quotes
+ci( == change in parenthesis
+ci) == change in parenthesis
+ci{ == change in curly braces
+ci} == change in curly braces
+ci[ == change in curly braces
+
+di( == delete in parenthesis
+di) == delete in parenthesis
+di{ == delete in curly braces
+di} == delete in curly braces
+di[ == delete in curly braces
+
+cit == change in tag
+dit == change in tag
+
+INFO
+<CR>g
+LINE
+
+PASTE
+i
+mouse-wheel-click
+
+
+VIEW
+:view filename
+
+EDIT
+:edit filename
+
+JOIN
+shift+J join 2 lines from cursor line
+3J --join 3 lines from cursor line
+10J -- join 10 lines from cursor line
+
+SORT
+:10,15sort  -- ascending   0-> 10
+:10,15sort! -- descending 10 <- 0
+:%sort
+:%sort!
+:sort /.*\%2v/ 
+:sort n /.*\s/
+<CR>v
+!sort
+sort -k 3 
+:sort /.*\%3v/
