@@ -1,5 +1,4 @@
-# A list of useful functions
-# Author: Mahboob Alam
+## A list of useful functions by Mahboob Alam
 
 * To adjust jupyter window size
 ```python
