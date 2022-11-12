@@ -70,6 +70,7 @@ def unix2dos(filename):
     f.close()
     return fo.name
 ```
+
 * To draw a table border in Jupyter Notebook
 ```python
 def table_border(show=False):
@@ -81,7 +82,7 @@ def table_border(show=False):
             HTML("<style> table, td, tr, th {border: none!important} </style>"))
 ```
 
-* To find all duplicates
+* To find all duplicates in pandas df
 ```python
 def show_all_duplicates(df, var_list):
     """to show all duplicates"""
@@ -95,6 +96,7 @@ def show_all_duplicates(df, var_list):
     df = df[ids.isin(ids[ids.duplicated()])].sort_values(by=var_list)
     return df
 ```
+
 * To get the target variable from python environment
 ```python
 def get_var(df, var_name):
