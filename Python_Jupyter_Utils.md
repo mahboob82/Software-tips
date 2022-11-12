@@ -27,6 +27,7 @@ def head(df, n=5, msg='data frame'):
     rprint(f"[green bold]{msg}[/green bold]", end="")
     rprint(df.head(n))
 ```
+
 * To display table side_by_side
 ```python
 def table_side_by_side(dfs, names=[], n=10):
@@ -46,11 +47,18 @@ def table_side_by_side(dfs, names=[], n=10):
 def goto_dir(dirpath):
     os.startfile(dirpath, 'open')
 ```
+
 * To open a targte file
 ```python
 def view_file(filepath, editor_path="notepad.exe"):
     subprocess.Popen([editor_path, filepath])
 ```
+* To copy a file
+```python
+def copy_file(filename, destination):
+    shutil.copy(filename, destination)
+```
+
 * To convert a unix line-ending to windows line-ending
 ```python
 def unix2dos(filename):
@@ -101,9 +109,9 @@ def save_fwf(filename, df):
         fmt = '%12s %12s %12s %4s %10.3f %10.3f %10.3f %7.3f %7.3f %7.3f'
         np.savetxt(ofile, df.values, fmt=fmt)
 ```        
+
 * To read a parquet or pickle from disk
 ```python
-
 def read_parquet_pickle(path_prefix, ftype='parquet', columns=[]):
     if ftype == 'parquet':
         if columns:
@@ -116,6 +124,8 @@ def read_parquet_pickle(path_prefix, ftype='parquet', columns=[]):
         # pd.read_pickle(f'{out_path}/pedigree/dam.pickle')
         return df
 ```
+
+
 * To write a parquet or a pickle to the disk
 ```python
 def write_parquet_pickle(df, df_str, out_path, ftype='parquet', columns=[]):
@@ -128,25 +138,4 @@ def write_parquet_pickle(df, df_str, out_path, ftype='parquet', columns=[]):
         pd.to_pickle(f'{out_path}/{df_str}.{ftype}')
 ```
 
-
-
-
-
-
-
-
-
-def read_parquet_pickle(path_prefix, ftype='parquet', columns=[]):
-    if ftype == 'parquet':
-        if columns:
-            df = pd.read_parquet(f"{path_prefix}.{ftype}", columns=columns)
-        else:
-            df = pd.read_parquet(f"{path_prefix}.{ftype}")
-        return df
-    else:
-        df = pd.read_pickel(f"{path_prefix}.{ftype}")
-        # pd.read_pickle(f'{out_path}/pedigree/dam.pickle')
-        return df
-
-```
 
