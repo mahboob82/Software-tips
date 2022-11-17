@@ -115,7 +115,9 @@ Output:
 total 56
 -rw------- 1 root root 57018 Nov 17 05:35 titanic.txt
 ```
-> Check for 
+
+> Check if the file was saved correly or not.
+
 ```python
 !head ./drive/MyDrive/dfs/titanic.txt | column -t
 ```
