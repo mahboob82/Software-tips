@@ -54,3 +54,12 @@ End Sub
     'ThisDocument.Content.Font.Name = "Times New Roman"
 End Sub
 ```
+
+```
+y_{ij}= \mathbf{X}\beta + \mathbf{Z}\mu + \varepsilon_{ij}
+y_{ij}= \mathbf{X}\beta + \mathbf{Z}\mu + \mathbf{e}_{ij}
+ce_{ijk}= \mathbit{herd}_i + year_j+ sea_k+ \varepsilon_{ijk}
+```
+
+
+
