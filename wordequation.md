@@ -2,7 +2,7 @@
 \mathbf -- bold face
 \mathbit --italic
 
-
+```
 
 Sub genEQ()
     Dim objRange As Range
@@ -22,3 +22,5 @@ Sub genEQ()
     Set objEq = objRange.OMaths(1)
     objEq.BuildUp
 End Sub
+
+```
