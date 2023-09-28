@@ -1,7 +1,7 @@
 # How can you start CMD with a multiple panes layout?
 
 ## First way:
-### Create a shortcut on desktop
+### Create a layout's shortcut on desktop
 Layout in mind: Three panes: 1 on the left and 2 on the right (vertical)
         
 Steps: 
