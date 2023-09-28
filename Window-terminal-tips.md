@@ -37,3 +37,24 @@ Steps:
 -# Again splits the pane on right but vertically and sets path to Github folder
       split-pane -p "Command Prompt" -d C:\Users\mahboob\Documents\Github      
 ```
+
+## Second way
+
+### Manual shortcut
+1. Open a cmd prompt
+2. Horizontal split: ``` alt+shift+plus ```    (plus over equal key, not number pad)
+3. Vertical split:  ``` alt+shift+minus ```    (minus over dash key, not number pad)
+4. Manually cd to your desired directories.
+
+* You can move from one to another pane by:
+        left to right:  ```alt+left/right```
+        top to bottom:  ```alt+down/up```
+        
+ * Resize:  ```alt+shift+left/right```  or ```alt+shift+up/down```
+        
+
+
+
+
+
+
