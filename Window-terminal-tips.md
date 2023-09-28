@@ -40,7 +40,7 @@ Steps:
 
 ## Second way
 
-### Manual shortcut
+### Manual pane creation one by one
 1. Open a cmd prompt
 2. Horizontal split: ``` alt+shift+plus ```    (plus over equal key, not number pad)
 3. Vertical split:  ``` alt+shift+minus ```    (minus over dash key, not number pad)
